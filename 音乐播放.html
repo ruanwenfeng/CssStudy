@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>音乐播放</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ::-webkit-scrollbar{width: 0;}
+        
+        html{
+            height: 100%;
+            overflow: hidden;
+        }
+        body{
+            height: 100%;
+            background: #1D1D1D;
+            font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+            color: white;
+            min-height: 400px;
+            min-width: 300px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            font-size: 16px;
+        }
+        .content-wrap{
+            position: relative;
+            width: 400px;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            /*border:#fff 1px solid;*/
+            /*box-shadow: 0 0 5px rgba(81, 203, 238, 1);*/
+            box-shadow: 3px  3px 3px rgba(0, 0, 0, 0.45);
+        }
+        .content-wrap .head{
+            height: 50px;
+            background-color: black;
+            position: relative;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.45);
+        }
+        .content-wrap .head .head-left{
+            position: relative;
+            width: 100px;
+            height: 100%;
+            background-color: #262626;
+            text-align: center;
+        }
+        .content-wrap .head .head-left > p{
+            line-height: 50px;
+        }
+        .content-wrap .head .triangle{
+            width: 0;
+            height:0;
+            border: 5px solid transparent;
+            border-top: 5px solid #262626;
+            position: absolute;
+            top:100%;
+            left: 50%;
+        }
+        .content-wrap .body{
+            overflow-y: auto;
+            height: 400px;
+            background-color: #1c1c1c;
+        }
+        .content-wrap .body .list-title{
+            color: #595959;
+            font-size: 12px;
+            margin-top: 5px;
+            padding: 2px 0 2px 5px;
+            border-bottom: 1px solid grey;
+        }
+        .content-wrap .body > ul{
+        }
+        .content-wrap .body > ul > li{
+            color: #595959;
+            padding: 2px 0 2px 5px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: normal;
+        }
+        .content-wrap .body strong{
+            display: inline-block;
+        }
+        .content-wrap .body strong:nth-child(1){
+            width: 55%;
+        }
+        .content-wrap .body strong:nth-child(2){
+            width: 30%;
+        }
+        .content-wrap .body strong:nth-child(3){
+            width: 15%;
+        }
+        .content-wrap .body > ul >li:hover{
+            background-color: black;
+            color: white;
+        }
+        .content-wrap .footer{
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="css/font-awesome.css">
+</head>
+<body >
+    <div id="content-wrap"   class="content-wrap">
+        <div id="drag-area" class="head">
+            <div class="head-left">
+                <p>播放列表</p>
+                <div class="triangle"></div>
+            </div>
+            <div class="head-right"></div>
+        </div>
+        <div class="body">
+            <div class="list-title">
+                <strong>歌曲名称</strong><strong>歌手</strong><strong>时长</strong>
+            </div>
+            <ul>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+                <li><div><strong>淤青</strong><strong>刘昊霖</strong><strong>03:32</strong></div></li>
+            </ul>
+        </div>
+        <div class="footer"></div>
+        <div class="progress"></div>
+    </div>
+<script>
+    (function () {
+        //移动
+//        document.addEventListener('dragover',function (event) {
+//            event.preventDefault();
+//        });
+//        var wrap = document.getElementById('content-wrap');
+//        var oldOffset  = null;
+//        wrap.addEventListener('dragstart',function (event) {
+//            oldOffset = {X:event.offsetX,Y:event.offsetY};
+//        });
+//        wrap.addEventListener('dragend',function (event) {
+//            this.style.top = this.offsetTop + (event.offsetY - oldOffset.Y) + 'px';
+//            this.style.left = this.offsetLeft + (event.offsetX - oldOffset.X) + 'px';
+//        });
+        //移动
+        var wrap = document.getElementById('content-wrap');
+        var drag = document.getElementById('drag-area');
+        drag.addEventListener('mousedown',function (event) {
+            var oldOffset = {X:event.offsetX,Y:event.offsetY};
+            if(event.button === 0){
+                this.style.cursor = 'move';
+                drag.onmousemove = function (event) {
+                    wrap.style.top = wrap.offsetTop + (event.offsetY - oldOffset.Y) + 'px';
+                    wrap.style.left = wrap.offsetLeft + (event.offsetX - oldOffset.X) + 'px';
+                }
+            }
+        });
+        drag.addEventListener('mouseup',function () {
+            drag.onmousemove = null;
+            drag.style.cursor = 'default';
+        })
+    })();
+</script>
+</body>
+</html>

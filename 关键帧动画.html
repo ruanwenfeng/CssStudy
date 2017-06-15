@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关键帧动画</title>
+    <style type="text/css">
+        body{
+            background: black;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            position: relative;
+
+        }
+        div > p{
+            color: white;
+            text-align: center;
+        }
+
+        .keyframe{
+            /*-webkit-animation:myFirst 2s ease-in 1;*/
+            /*-o-animation:myFirst 2s ease-in 1;*/
+            animation:myFirst 1s ease-in 1  ;
+            /*-webkit-animation-fill-mode: forwards;*/
+            /*-moz-animation-fill-mode: forwards;*/
+            /*-o-animation-fill-mode: forwards;*/
+            animation-fill-mode: forwards;
+            left: 0;
+            top:0;
+        }
+        @keyframes myFirst {
+            from{
+
+            }
+            to{
+                left: 400px;
+                top:  300px;
+                width: 500px;
+                height: 100px;
+                background: red;
+            }
+        }
+    </style>
+    <script>
+        var div = null;
+        document.onclick = function () {
+            div || ( div = document.getElementById('demo') );
+            div.classList.add('keyframe');
+        }
+    </script>
+</head>
+<body>
+    <div id="demo">
+        <p>变形记</p>
+    </div>
+</body>
+</html>
